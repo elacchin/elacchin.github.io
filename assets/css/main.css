@@ -123,6 +123,11 @@ a {
 strong, b {
   color: #00FF7F; /* Editorial */
   font-weight: 600; }
+b {
+    color:  #ff00ff; /* Example */
+    font-weight: bold; /* Default for <b>, but might be specified */
+}
+
 
 em, i {
   font-style: italic; }
@@ -230,6 +235,9 @@ hr {
 
 .fontsize18 {
     font-size: 18px;
+}
+.fontsize21 {
+    font-size: 21px;
 }
 
 .bold-text {
