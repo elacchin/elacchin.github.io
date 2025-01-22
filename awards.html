@@ -72,7 +72,7 @@
 									
 									<div class="fontsize18 normal-text ">
 									I have co-supervised two graduate students at the Indiana University (US). Their 3D visualizations illustrating complex features of a rotating globular clusters were awarded the <b>Faculty Assistance in Data Science Showcase Grand Prize</b>. 
-									Two of their visualizations are shown below; on the left, helium-poor stars, while on the right the helium-rich ones are displayed.
+									Two of their visualizations are shown below; on the left, helium-rich stars, while on the right the helium-poor ones are displayed.
 									</div>	
 									<div id="container-wrapper" style="display: flex; gap: 10px;">
 										<div id="webgl-container" style="flex: 1; height: 300px;"></div>
@@ -110,7 +110,7 @@
 						
 
 										const loader = new GLTFLoader();
-										loader.load('model/low_Y.gltf', function (gltf) {
+										loader.load('model/high_Y.gltf', function (gltf) {
 											const car = gltf.scene;
 											car.scale.set(1,1, 1)
 											car.position.set(0, 0, 0);
@@ -168,7 +168,7 @@
 									
 
 										const loader = new GLTFLoader();
-										loader.load('model/high_Y.gltf', function (gltf) {
+										loader.load('model/low_Y.gltf', function (gltf) {
 											const car = gltf.scene;
 											car.scale.set(1,1, 1)
 											car.position.set(0, 0, 0);
