@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Elements - Editorial by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+		  .bottom-three {
+		      margin-bottom: 2cm;
+		  }
+		</style>
+
+	</head>
+
+
+<body class="is-preload">
+
+  	<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo" style="font-size: 24px;"><strong>Elena Lacchin</strong></a> 
+									<ul class="icons">
+									<ul class="icons">
+													
+										<li><a href="https://twitter.com/5pace0ddity" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<!--	<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+								  		<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+										<li><a href="https://www.linkedin.com/in/elena-lacchin-b2b72a78/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+										<li><a href="https://www.researchgate.net/profile/Elena-Lacchin" class="icon brands fa-researchgate"><span class="label">Researchgate</span></a></li>
+										<li><a href="#" class="icon brands fa-mail"><span class="label">mail</span></a></li>
+									</ul>
+								</header>
+
+
+									<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Awards</h1>
+									</header>
+								
+									<div class="row">
+									  	
+									  	<div class="col-text" style="flex: 70%;">
+
+									    	<div class="fontsize21 normal-text ">
+									     	 My PhD thesis has been awarded the <b>"Christine Vandemoortele for research" Prize </b> by the Deparment of Physics and Astronomy of the University of Bologna.
+											</br>
+									      	My thesis is aimed at deepeing our understanding of the formation and evolution of multiple stellar populations in globular clusters, by means of sofisticted 3D numerical simulations.
+											In particular, I studied the effects of various physical processes such as cluster rotation and Type Ia supernovae on the formation of the second, and chemically peculiar, population. 
+									    	</div> 
+									  	</div>
+										<div class="col-image" style="flex: 30%; display: flex; justify-content: center; align-items: center;">
+											<span class="image object">
+												<img src="images/thesis.png" alt="" style="width: 100%; height: auto;"/>
+										   	</span>
+										</div>
+									</div>
+										
+									<p class="bottom-three">
+									</p>
+									
+									<div class="fontsize21 normal-text ">
+									I have co-supervised two graduate students at the Indiana University (US). Their 3D visualizations illustrating complex features of a rotating globular clusters were awarded the <b>Faculty Assistance in Data Science Showcase Grand Prize</b>. 
+									Two of their visualizations are shown below; on the left, helium-poor stars, while on the right the helium-rich ones are displayed.
+									</div>	
+									<div id="container-wrapper" style="display: flex; gap: 10px;">
+										<div id="webgl-container" style="flex: 1; height: 300px;"></div>
+										<div id="info-container" style="flex: 1; height: 300px;">
+										</div>
+									</div>
+
+
+									<!-- <div id="webgl-container" style="width: 50%; height: 500px;"></div> -->
+																		
+									<script type="importmap">
+										{
+											"imports": {
+												"three": "https://unpkg.com/three@0.126.0/build/three.module.js"
+											}
+										}
+									</script>
+									
+									<script type="module">
+									import * as THREE from 'three';
+									import { GLTFLoader } from 'https://unpkg.com/three@0.126.0/examples/jsm/loaders/GLTFLoader.js';
+									
+									
+									// Initialize the scene, camera, and renderer
+										const scene = new THREE.Scene();
+										const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 1000);
+										const container = document.getElementById('webgl-container');
+										const renderer = new THREE.WebGLRenderer();
+
+										renderer.setSize(container.clientWidth, container.clientHeight);
+										container.appendChild(renderer.domElement);
+
+										camera.position.set(200, 40, 40);
+										camera.lookAt(scene.position)
+									
+
+										
+										const size = 5;
+										const divisions = 1;
+
+									
+										
+										
+										
+
+										const loader = new GLTFLoader();
+										loader.load('model/low_Y.gltf', function (gltf) {
+											const car = gltf.scene;
+											car.scale.set(1,1, 1)
+											car.position.set(0, 0, 0);
+											scene.add( gltf.scene);
+										// scene.rotation.x += 300;
+										});
+
+								
+
+
+
+										// render the scene
+										function animate() {
+											requestAnimationFrame(animate);
+
+										
+										// Rotate the Cube
+											
+										scene.rotation.y += 0.01;
+											
+										renderer.render(scene, camera);
+										}
+									animate();
+
+									// Handle window resize
+										window.addEventListener('resize', () => {
+											renderer.setSize(container.clientWidth, container.clientHeight);
+											camera.aspect = container.clientWidth / container.clientHeight;
+											camera.updateProjectionMatrix();
+										});
+									</script>
+
+
+									
+										
+
+									<script type="importmap">
+										{
+											"imports": {
+												"three": "https://unpkg.com/three@0.126.0/build/three.module.js"
+											}
+										}
+									</script>
+									
+									<script type="module">
+									import * as THREE from 'three';
+									import { GLTFLoader } from 'https://unpkg.com/three@0.126.0/examples/jsm/loaders/GLTFLoader.js';
+									
+									
+									// Initialize the scene, camera, and renderer
+										const scene = new THREE.Scene();
+										const camera = new THREE.PerspectiveCamera(75, 2, 0.1, 1000);
+										const container = document.getElementById('info-container');
+										const renderer = new THREE.WebGLRenderer();
+
+										renderer.setSize(container.clientWidth, container.clientHeight);
+										container.appendChild(renderer.domElement);
+
+										camera.position.set(200, 40, 40);
+										camera.lookAt(scene.position)
+									
+
+										const loader = new GLTFLoader();
+										loader.load('model/high_Y.gltf', function (gltf) {
+											const car = gltf.scene;
+											car.scale.set(1,1, 1)
+											car.position.set(0, 0, 0);
+											scene.add( gltf.scene);
+										});
+
+							
+										// render the scene
+										function animate() {
+											requestAnimationFrame(animate);
+
+										
+										// Rotate the Cube
+											
+										scene.rotation.y += 0.01;
+											
+										renderer.render(scene, camera);
+										}
+									animate();
+
+									// Handle window resize
+										window.addEventListener('resize', () => {
+											renderer.setSize(container.clientWidth, container.clientHeight);
+											camera.aspect = container.clientWidth / container.clientHeight;
+											camera.updateProjectionMatrix();
+										});
+									</script>
+
+
+									<p class="bottom-three">
+									</p>
+
+
+									<div class="row">
+									  	
+										<div class="col-text" style="flex: 70%;">
+
+									    	<div class="fontsize21 normal-text ">
+									      	During my PhD, I was awarded the <b>MARCOPOLO grant</b>  by the University of Bologna to spend three months at the Observatoire de Paris, where I conducted my research with Alessandra Mastobuono-Battisti.
+											
+										</div> 
+									  	</div>
+										<div class="col-image" style="flex: 30%; display: flex; justify-content: center; align-items: center;"> 
+											<span class="image object">
+												<img src="images/obs_paris.jpeg" alt=""style="width: 70%; height: auto;" />
+										 	</span>
+										</div>
+									</div>
+									<p class="bottom-three">
+									</p>
+								
+
+									<div class="row">
+									  	
+										<div class="col-text" style="flex: 70%;">
+
+									    	<div class=" fontsize21 normal-text ">
+									      	I was awarded the <b> scholarship by the Collegio Universitario di Eccellenza “Luciano Fonda” </b> to carry on my Master studies in Physics. 
+											The award was covering the accomodation and part of the universitary taxes.
+											
+										</div> 
+									  	</div>
+										<div class="col-image" style="flex: 30%; display: flex; justify-content: center; align-items: center;"> 
+											<span class="image object">
+												<img src="images/coll_fonda.png" alt="" style="width: 30%; height: auto;" />
+										 	</span>
+										</div>
+									</div>
+									
+
+
+						</div>
+					</div>
+			</div>
+    
+
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+    
+</body>
+</html>
