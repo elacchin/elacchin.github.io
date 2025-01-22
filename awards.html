@@ -6,6 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="icon" type="image/png" href="images/mountain_color.jpg">
 		<style>
 		  .bottom-three {
 		      margin-bottom: 2cm;
@@ -106,16 +107,7 @@
 
 										camera.position.set(200, 40, 40);
 										camera.lookAt(scene.position)
-									
-
-										
-										const size = 5;
-										const divisions = 1;
-
-									
-										
-										
-										
+						
 
 										const loader = new GLTFLoader();
 										loader.load('model/low_Y.gltf', function (gltf) {
@@ -127,19 +119,13 @@
 										});
 
 								
-
-
-
 										// render the scene
 										function animate() {
 											requestAnimationFrame(animate);
 
-										
-										// Rotate the Cube
+												scene.rotation.y += 0.01;
 											
-										scene.rotation.y += 0.01;
-											
-										renderer.render(scene, camera);
+												renderer.render(scene, camera);
 										}
 									animate();
 
@@ -193,13 +179,10 @@
 										// render the scene
 										function animate() {
 											requestAnimationFrame(animate);
-
-										
-										// Rotate the Cube
 											
-										scene.rotation.y += 0.01;
+												scene.rotation.y += 0.01;
 											
-										renderer.render(scene, camera);
+												renderer.render(scene, camera);
 										}
 									animate();
 
